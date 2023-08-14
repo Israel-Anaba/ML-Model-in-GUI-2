@@ -13,6 +13,9 @@ Make sure you have the following libraries installed in your Python environment 
 
 You can install these libraries using the following command:
 
+
+## Setup 💻 🪛 🔧
+
 ## Preview 🔍 🤖
 
 ## Authors 📖 🧑‍🎓
@@ -39,8 +42,7 @@ Results: The app will display the predicted sales for the specified date, store 
 
 ## Troubleshooting 🛠️
 
-If you encounter any issues with the app, ensure that you have the required libraries installed and that the "exported_data.pkl" file is in the correct location.
-Verify that the XGBoost version used for training matches the version used during deployment.
+If you encounter any issues with the app, ensure that you have the required libraries installed and that the "my_exported_components.pkl" file is in the correct location.
 
 ## License
 
