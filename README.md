@@ -64,8 +64,6 @@ Below is a preview showcasing the app's appearance.
     </div>
 </div>
 
-
-
 ## Authors 📖 🧑‍🎓
 
 This project was developed during the Azubi Africa Data Science Training. Below is the details of the initial collaborators of this project with respective articles covering the process of the project and their individual github profiles.
@@ -111,7 +109,6 @@ Feel free to experiment with different customer attribute combinations to see ho
 Here are a few recommended resources to help you gain a solid understanding of Gradio:
 
 [Get started with Gradio](https://gradio.app/getting_started/)
-
 
 ## License
 
