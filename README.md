@@ -30,23 +30,35 @@ To set up and run the Gradio app in your local environment, follow these instruc
 1. Clone this repository to your local machine:
 
 Open a terminal or command prompt on your computer.
+
+
 ![Git](Screenshots/GradioSet2.png)
 
 Once the cloning process is complete, you can navigate into the cloned directory using the cd command:
+
+
 ![Git](Screenshots/GradioSet3.png)
 
 **Python:** Make sure you have Python installed on your system. You can download it from Python's official website.
 
 **Virtual Environment (optional but recommended):** It's recommended to use a virtual environment to manage dependencies for your project. You can create a virtual environment using the following commands:
+
+
 ![venv](Screenshots/GradioSet4.png)
 
 **Required Packages:** Install the required Python packages using pip. You can install them using the provided requirements.txt file:
+
+
 ![venv](Screenshots/GradioSet5.png)
 
 **Run the Gradio app using the following command:**
+
+
 ![Demo](Screenshots/GradioSet6.png)
 
  Go to your browser at the following address :
+
+ 
  [App Link](http://127.0.0.1:7861/)
 
 ## Preview 🔍 🤖
