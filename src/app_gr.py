@@ -1,310 +1,9 @@
 
-# import gradio as gr
-# from gradio.components import Number, Dropdown
-# import numpy as np
-# import pandas as pd
-# import pickle
-
-# # Load exported data
-# exported_data_path = 'src\Asset\ML\my_exported_components.pkl'
-# with open(exported_data_path, 'rb') as file:
-#     exported_data = pickle.load(file)
-
-# # Load the exported components
-# categorical_imputer = exported_data['categorical_imputer']
-# numerical_imputer = exported_data['numerical_imputer']
-# encoder = exported_data['encoder']
-# scaler = exported_data['scaler']
-# best_model = exported_data['best_model']
-
-# # # Define the function to preprocess and predict
-# # def churn_prediction(gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, 
-# #                      InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-# #                      StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod,
-# #                      MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges):
-# #     # Preprocess the input data
-# #     input_data = [[gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, 
-# #                    InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-# #                    StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod,
-# #                    MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges]]
-
-# #     input_data = categorical_imputer.transform(input_data)
-# #     input_data = numerical_imputer.transform(input_data)
-# #     input_data = encoder.transform(input_data)
-# #     input_data = scaler.transform(input_data)
-
-# #     # Make predictions using the loaded model
-# #     prediction = best_model.predict(input_data)
-
-# #     return prediction
-
-# def churn_prediction(gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, 
-#                      InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-#                      StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod,
-#                      MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges):
-    
-#     # Categorical features
-#     categorical_features = [gender, SeniorCitizen, Partner, Dependents, PhoneService, MultipleLines, 
-#                             InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-#                             StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod]
-    
-#     # Numerical features
-#     numerical_features = [tenure, MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges]
-
-#     # Preprocess categorical features
-#     categorical_input = [categorical_features]
-#     categorical_input = categorical_imputer.transform(categorical_input)
-#     categorical_input = encoder.transform(categorical_input)
-
-#     # Preprocess numerical features
-#     numerical_input = [numerical_features]
-#     numerical_input = numerical_imputer.transform(numerical_input)
-#     numerical_input = scaler.transform(numerical_input)
-
-#     # Combine preprocessed categorical and numerical features
-#     # input_data = np.concatenate((categorical_input, numerical_input), axis=1)
-#     input_data = np.hstack((categorical_input, numerical_input))
-
-
-#     # Make predictions using the loaded model
-#     prediction = best_model.predict(input_data)
-
-
-#     return prediction
-
-# # Define input components
-# input_components = [
-#     gr.inputs.Dropdown(choices=['Female', 'Male'], label='gender'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='SeniorCitizen'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='Partner'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='Dependents'),
-#     gr.inputs.Number(label='tenure'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='PhoneService'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='MultipleLines'),
-#     gr.inputs.Dropdown(choices=['DSL', 'Fiber optic', 'No'], label='InternetService'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='OnlineSecurity'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='OnlineBackup'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='DeviceProtection'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='TechSupport'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='StreamingTV'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='StreamingMovies'),
-#     gr.inputs.Dropdown(choices=['Month-to-month', 'One year', 'Two year'], label='Contract'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='PaperlessBilling'),
-#     gr.inputs.Dropdown(choices=['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'], label='PaymentMethod'),
-#     gr.inputs.Number(label='MonthlyCharges'),
-#     gr.inputs.Number(label='TotalCharges'),
-#     gr.inputs.Number(label='MonthlyCharges_TotalCharges_Ratio'),
-#     gr.inputs.Number(label='AverageMonthlyCharges')
-# ]
-
-# # Create and launch the Gradio interface
-# # iface = gr.Interface(fn=churn_prediction, inputs=input_components, outputs="text")
-# # iface.launch()
-# try:
-#     # Create and launch the Gradio interface
-#     iface = gr.Interface(fn=churn_prediction, inputs=input_components, outputs="text")
-#     iface.launch()
-# except Exception as e:
-#     print("An error occurred:", e)
-
-
-
-# import gradio as gr
-# from gradio.components import Number, Dropdown
-# import pickle
-# import numpy as np
-
-# # Load exported data
-# exported_data_path = 'src\Asset\ML\my_exported_components.pkl'
-# with open(exported_data_path, 'rb') as file:
-#     exported_data = pickle.load(file)
-
-# # Load the exported components
-# categorical_imputer = exported_data['categorical_imputer']
-# numerical_imputer = exported_data['numerical_imputer']
-# encoder = exported_data['encoder']
-# scaler = exported_data['scaler']
-# best_model = exported_data['best_model']
-
-# Define the function to preprocess and predict
-# def churn_prediction(gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, 
-#                      InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-#                      StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod,
-#                      MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges):
-#     # Categorical features
-#     categorical_features = [gender, SeniorCitizen, Partner, Dependents, PhoneService, MultipleLines, 
-#                             InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-#                             StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod]
-    
-#     # Numerical features
-#     numerical_features = [tenure, MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges]
-
-#     # Preprocess categorical features
-#     categorical_input = [categorical_features]
-#     categorical_input = categorical_imputer.transform(categorical_input)
-#     categorical_input = encoder.transform(categorical_input)
-
-#     # Preprocess numerical features
-#     numerical_input = [numerical_features]
-#     numerical_input = numerical_imputer.transform(numerical_input)
-#     numerical_input = scaler.transform(numerical_input)
-
-#     # Combine preprocessed categorical and numerical features
-#     # input_data = np.concatenate((categorical_input, numerical_input), axis=1)
-#     input_data = np.hstack((categorical_input, numerical_input))
-
-
-#     # Make predictions using the loaded model
-#     prediction = best_model.predict(input_data)
-
-
-#     return prediction
-# def churn_prediction(inputs):
-#     # Categorical features
-#     categorical_features = [inputs['gender'], inputs['SeniorCitizen'], inputs['Partner'], 
-#                             inputs['Dependents'], inputs['PhoneService'], inputs['MultipleLines'], 
-#                             inputs['InternetService'], inputs['OnlineSecurity'], inputs['OnlineBackup'], 
-#                             inputs['DeviceProtection'], inputs['TechSupport'], inputs['StreamingTV'], 
-#                             inputs['StreamingMovies'], inputs['Contract'], inputs['PaperlessBilling'], 
-#                             inputs['PaymentMethod']]
-    
-#     # Numerical features
-#     numerical_features = [inputs['tenure'], inputs['MonthlyCharges'], inputs['TotalCharges'],
-#                           inputs['MonthlyCharges_TotalCharges_Ratio'], inputs['AverageMonthlyCharges']]
-
-#     # Preprocess categorical features
-#     categorical_input = [categorical_features]
-#     categorical_input = categorical_imputer.transform(categorical_input)
-#     categorical_input = encoder.transform(categorical_input)
-
-#     # Preprocess numerical features
-#     numerical_input = [numerical_features]
-#     numerical_input = numerical_imputer.transform(numerical_input)
-#     numerical_input = scaler.transform(numerical_input)
-
-#     # Combine preprocessed categorical and numerical features
-#     input_data = np.hstack((categorical_input, numerical_input))
-
-#     # Make predictions using the loaded model
-#     prediction = best_model.predict(input_data)
-
-#     return prediction
-
-# # Define input components
-# input_components = [
-#     gr.inputs.Dropdown(choices=['Female', 'Male'], label='gender'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='SeniorCitizen'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='Partner'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='Dependents'),
-#     gr.inputs.Number(label='tenure'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='PhoneService'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='MultipleLines'),
-#     gr.inputs.Dropdown(choices=['DSL', 'Fiber optic', 'No'], label='InternetService'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='OnlineSecurity'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='OnlineBackup'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='DeviceProtection'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='TechSupport'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='StreamingTV'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='StreamingMovies'),
-#     gr.inputs.Dropdown(choices=['Month-to-month', 'One year', 'Two year'], label='Contract'),
-#     gr.inputs.Dropdown(choices=['No', 'Yes'], label='PaperlessBilling'),
-#     gr.inputs.Dropdown(choices=['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'], label='PaymentMethod'),
-#     gr.inputs.Number(label='MonthlyCharges'),
-#     gr.inputs.Number(label='TotalCharges'),
-#     gr.inputs.Number(label='MonthlyCharges_TotalCharges_Ratio'),
-#     gr.inputs.Number(label='AverageMonthlyCharges')
-# ]
-
-# # Create and launch the Gradio interface
-# iface = gr.Interface(fn=churn_prediction, inputs=input_components, outputs="text")
-# iface.launch()
-
-
-
-# import gradio as gr
-# from gradio.components import Dropdown, Number, Label
-# import pickle
-# import numpy as np
-
-# # Load exported data
-# exported_data_path = 'src\Asset\ML\my_exported_components.pkl'
-# with open(exported_data_path, 'rb') as file:
-#     exported_data = pickle.load(file)
-
-# # Load the exported components
-# categorical_imputer = exported_data['categorical_imputer']
-# numerical_imputer = exported_data['numerical_imputer']
-# encoder = exported_data['encoder']
-# scaler = exported_data['scaler']
-# best_model = exported_data['best_model']
-
-# # Define the function to preprocess and predict
-# def churn_prediction(gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines,
-#                      InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport,
-#                      StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod,
-#                      MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges):
-#     # Categorical features
-#     categorical_features = [gender, SeniorCitizen, Partner, Dependents, PhoneService, MultipleLines, 
-#                             InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, 
-#                             StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod]
-    
-#     # Numerical features
-#     numerical_features = [tenure, MonthlyCharges, TotalCharges, MonthlyCharges_TotalCharges_Ratio, AverageMonthlyCharges]
-
-#     # Preprocess categorical features
-#     categorical_input = [categorical_features]
-#     categorical_input = categorical_imputer.transform(categorical_input)
-#     categorical_input = encoder.transform(categorical_input)
-
-#     # Preprocess numerical features
-#     numerical_input = [numerical_features]
-#     numerical_input = numerical_imputer.transform(numerical_input)
-#     numerical_input = scaler.transform(numerical_input)
-
-#     # Combine preprocessed categorical and numerical features
-#     input_data = np.hstack((categorical_input, numerical_input))
-
-#     # Make predictions using the loaded model
-#     prediction = best_model.predict(input_data)
-
-#     return prediction
-
-# # Define input components
-# input_components = [
-#     Dropdown(choices=['Female', 'Male'], label='gender'),
-#     Dropdown(choices=['No', 'Yes'], label='SeniorCitizen'),
-#     Dropdown(choices=['No', 'Yes'], label='Partner'),
-#     Dropdown(choices=['No', 'Yes'], label='Dependents'),
-#     Number(label='tenure'),
-#     Dropdown(choices=['No', 'Yes'], label='PhoneService'),
-#     Dropdown(choices=['No', 'Yes'], label='MultipleLines'),
-#     Dropdown(choices=['DSL', 'Fiber optic', 'No'], label='InternetService'),
-#     Dropdown(choices=['No', 'Yes'], label='OnlineSecurity'),
-#     Dropdown(choices=['No', 'Yes'], label='OnlineBackup'),
-#     Dropdown(choices=['No', 'Yes'], label='DeviceProtection'),
-#     Dropdown(choices=['No', 'Yes'], label='TechSupport'),
-#     Dropdown(choices=['No', 'Yes'], label='StreamingTV'),
-#     Dropdown(choices=['No', 'Yes'], label='StreamingMovies'),
-#     Dropdown(choices=['Month-to-month', 'One year', 'Two year'], label='Contract'),
-#     Dropdown(choices=['No', 'Yes'], label='PaperlessBilling'),
-#     Dropdown(choices=['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'], label='PaymentMethod'),
-#     Number(label='MonthlyCharges'),
-#     Number(label='TotalCharges'),
-#     Number(label='MonthlyCharges_TotalCharges_Ratio'),
-#     Number(label='AverageMonthlyCharges')
-# ]
-
-# # Create and launch the Gradio interface
-# iface = gr.Interface(fn=churn_prediction, inputs=input_components, outputs="text")
-# iface.launch()
-
-
 import gradio as gr
 from gradio.components import Number, Dropdown
 import numpy as np
 import pandas as pd
 import pickle
-# from sklearn.metrics import PredictionErrorDisplay
 
 # Load exported data
 exported_data_path = 'src\Asset\ML\my_exported_components.pkl'
@@ -372,40 +71,48 @@ def churn_prediction(gender, SeniorCitizen, Partner, Dependents, tenure, PhoneSe
     # Make predictions using the loaded model
     predictions = best_model.predict(prediction_data_preprocessed)
 
-     # Map the predictions to 'Yes' or 'No'
-    prediction_label = ['Customer Churn' if p == 1 else 'Customer Not Churn' for p in predictions]
+    # Map the predictions to 'Yes' or 'No'
+    prediction_label = 'Customer Churn' if predictions[0] == 1 else 'Customer Not Churn'
+
     
     return prediction_label
 
 
 # Define input components
 input_components = [
-    gr.inputs.Dropdown(choices=['Female', 'Male'], label='gender'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='SeniorCitizen'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='Partner'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='Dependents'),
-    gr.inputs.Number(label='tenure'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='PhoneService'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='MultipleLines'),
-    gr.inputs.Dropdown(choices=['DSL', 'Fiber optic', 'No'], label='InternetService'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='OnlineSecurity'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='OnlineBackup'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='DeviceProtection'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='TechSupport'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='StreamingTV'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='StreamingMovies'),
-    gr.inputs.Dropdown(choices=['Month-to-month', 'One year', 'Two year'], label='Contract'),
-    gr.inputs.Dropdown(choices=['No', 'Yes'], label='PaperlessBilling'),
-    gr.inputs.Dropdown(choices=['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'], label='PaymentMethod'),
-    gr.inputs.Number(label='MonthlyCharges'),
-    gr.inputs.Number(label='TotalCharges'),
-    gr.inputs.Number(label='MonthlyCharges_TotalCharges_Ratio'),
-    gr.inputs.Number(label='AverageMonthlyCharges')
+    gr.Dropdown(choices=['Female', 'Male'], label='gender: Select the gender of the customer.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='SeniorCitizen: Select if the customer is a senior citizen.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='Partner: Select if the customer has a partner.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='Dependents: Select if the customer has dependents.'),
+    gr.Number(label='tenure: Enter the number of months the customer has been with the company.', minimum=0, maximum=72),
+    gr.Dropdown(choices=['No', 'Yes'], label='PhoneService: Select if the customer has a phone service.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='MultipleLines: Select if the customer has multiple lines.'),
+    gr.Dropdown(choices=['DSL', 'Fiber optic', 'No'], label='InternetService: Select the type of internet service.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='OnlineSecurity: Select if the customer has online security.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='OnlineBackup: Select if the customer has online backup.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='DeviceProtection: Select if the customer has device protection.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='TechSupport: Select if the customer has tech support.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='StreamingTV: Select if the customer has streaming TV.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='StreamingMovies: Select if the customer has streaming movies.'),
+    gr.Dropdown(choices=['Month-to-month', 'One year', 'Two year'], label='Contract: Select the contract type.'),
+    gr.Dropdown(choices=['No', 'Yes'], label='PaperlessBilling: Select if the customer uses paperless billing.'),
+    gr.Dropdown(choices=['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'], label='PaymentMethod: Select the payment method.'),
+    gr.Number(label='MonthlyCharges: Enter the monthly charges for the customer.', minimum=18, maximum=119),
+    gr.Number(label='TotalCharges: Enter the total charges for the customer.', minimum=19, maximum=8670),
+    gr.Number(label='MonthlyCharges_TotalCharges_Ratio: Enter the ratio of monthly charges to total charges.', minimum=0.00, maximum=1.0),
+    gr.Number(label='AverageMonthlyCharges: Enter the average monthly charges for the customer.', minimum=0, maximum=120)
 ]
 
+
+
 # Create and launch the Gradio interface
-iface = gr.Interface(fn=churn_prediction, inputs=input_components, outputs="text")
-iface.launch(share=True)
+iface = gr.Interface(
+    fn=churn_prediction,
+    inputs=input_components,
+    outputs="text",
+    title="Customer Churn Prediction", 
+    description="Predict customer churn using machine learning. Provide customer information to predict whether they are likely to leave a telecommunications company.",  # Add a description here
+    live=False  
+)
 
-
-# , 'No internet service'
+iface.launch()
