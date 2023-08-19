@@ -12,12 +12,12 @@ This project demonstrates the incorporation of a machine learning model into a g
 
 Make sure you have the following libraries installed in your Python environment or virtual environment:
 
-*gradio
-*pandas==1.5.3
-*numpy==1.23.5
-*seaborn==0.12.2
-*scikit-learn==1.3.0
-*gdown
+* gradio
+* pandas==1.5.3
+* numpy==1.23.5
+* seaborn==0.12.2
+* scikit-learn==1.3.0
+* gdown
 
 You can install these libraries using the following command:
 
@@ -31,11 +31,9 @@ To set up and run the Gradio app in your local environment, follow these instruc
 
 Open a terminal or command prompt on your computer.
 
-
 ![Git](Screenshots/GradioSet2.png)
 
 Once the cloning process is complete, you can navigate into the cloned directory using the cd command:
-
 
 ![Git](Screenshots/GradioSet3.png)
 
@@ -43,22 +41,18 @@ Once the cloning process is complete, you can navigate into the cloned directory
 
 **Virtual Environment (optional but recommended):** It's recommended to use a virtual environment to manage dependencies for your project. You can create a virtual environment using the following commands:
 
-
 ![venv](Screenshots/GradioSet4.png)
 
 **Required Packages:** Install the required Python packages using pip. You can install them using the provided requirements.txt file:
-
 
 ![venv](Screenshots/GradioSet5.png)
 
 **Run the Gradio app using the following command:**
 
-
 ![Demo](Screenshots/GradioSet6.png)
 
  Go to your browser at the following address :
 
- 
  [App Link](http://127.0.0.1:7861/)
 
 ## Preview 🔍 🤖
