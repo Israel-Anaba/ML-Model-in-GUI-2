@@ -99,7 +99,7 @@ input_components = [
     gr.Dropdown(choices=['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'], label='PaymentMethod: Select the payment method.'),
     gr.Number(label='MonthlyCharges: Enter the monthly charges for the customer.', minimum=18, maximum=119),
     gr.Number(label='TotalCharges: Enter the total charges for the customer.', minimum=19, maximum=8670),
-    gr.Number(label='MonthlyCharges_TotalCharges_Ratio: Enter the ratio of monthly charges to total charges.', minimum=0.00, maximum=1.0),
+    gr.Slider(label='MonthlyCharges_TotalCharges_Ratio: Enter the ratio of monthly charges to total charges.', minimum=0.00, maximum=1.0),
     gr.Number(label='AverageMonthlyCharges: Enter the average monthly charges for the customer.', minimum=0, maximum=120)
 ]
 
@@ -111,8 +111,9 @@ iface = gr.Interface(
     inputs=input_components,
     outputs="text",
     title="Customer Churn Prediction", 
-    description="Predict customer churn using machine learning. Provide customer information to predict whether they are likely to leave a telecommunications company.",  # Add a description here
-    live=False  
+    description="This app Predict customer churn using machine learning. It Provides stakeholders & Customers information to predict whether they are likely to leave(Churn) a telecommunications company or stay.",
+    live=False,  
+    # share=True
 )
 
 iface.launch()
