@@ -51,7 +51,7 @@ Once the cloning process is complete, you can navigate into the cloned directory
 
 ![Demo](Screenshots/GradioSet6.png)
 
- Go to your browser at the following address :
+ **Go to your browser at the following address access the app:**
 
  [App Link](http://127.0.0.1:7860/)
 
@@ -74,12 +74,12 @@ Below is a preview showcasing the app's appearance.
 
 This project was developed during the Azubi Africa Data Science Training. Below is the details of the initial collaborators of this project with respective articles covering the process of the project and their individual github profiles.
 
-| Name                | Article             | Github              |
-| ------------------- | ------------------- | ------------------- |
-| Isaac Sarpong       |                     |                     |
+| Name                | Article                                                                                                                                                                                                                                           | Github                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Isaac Sarpong       |                                                                                                                                                                                                                                                   |                                              |
 | Israel Anaba Ayamga | [Bridging Data Science and Actionable Insights: Deploying a Customer Churn Prediction Model with Gradio](https://israelanaba.medium.com/bridging-data-science-and-actionable-insights-deploying-a-customer-churn-prediction-model-with-936b75310f0e) | [Israel_Anaba](https://github.com/Israel-Anaba) |
-| Peter Mutiwri       |                     |                     |
-| Emmanuel Morkeh     |                     |                     |
+| Peter Mutiwri       |                                                                                                                                                                                                                                                   |                                              |
+| Emmanuel Morkeh     |                                                                                                                                                                                                                                                   |                                              |
 
 ## Features ⛑️
 
