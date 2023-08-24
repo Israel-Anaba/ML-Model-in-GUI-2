@@ -53,7 +53,7 @@ Once the cloning process is complete, you can navigate into the cloned directory
 
  Go to your browser at the following address :
 
- [App Link](http://127.0.0.1:7861/)
+ [App Link](http://127.0.0.1:7860/)
 
 ## Preview 🔍 🤖
 
